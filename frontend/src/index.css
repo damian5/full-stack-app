@@ -1,0 +1,57 @@
+:root {
+  font-family: Montserrat;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --green-teal: #0ab463;
+  --gainsboro: #dadada;
+  --background-gray: #f1f1f1;
+  --white: #ffffff;
+  --pinkish-grey: #c4c4c4;
+  --warm-grey: #848484bf;
+  --soft-black: #383838;
+  --emerald: #0094ff;
+  --green-teal-dark: #089954;
+  --small-screen: 700px;
+}
+
+html {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+p {
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin: 0;
+  color: var(--soft-black);
+}
