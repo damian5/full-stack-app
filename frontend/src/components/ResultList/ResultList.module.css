@@ -1,0 +1,47 @@
+.ResultListContainer {
+  background-color: var(--white);
+  width: 100%;
+  max-width: 582px;
+  padding: 30px;
+  max-height: 582px;
+  min-height: 200px;
+  overflow: auto;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 var(--warm-grey);
+  border: solid 1px var(--gainsboro);
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--pinkish-grey);
+  padding-bottom: 10px;
+}
+
+.emptyState {
+  color: var(--pinkish-grey);
+  max-width: 324px;
+  text-align: center;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.listOfPeopleContainer {
+  flex: 1;
+  width: 100%;
+}
+@media only screen and (max-width: 700px) {
+  .ResultListContainer {
+    max-width: unset;
+    width: unset;
+  }
+}

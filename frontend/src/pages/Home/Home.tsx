@@ -4,6 +4,7 @@ import {
   SearchForm,
   type ItemToSearch,
 } from "../../components/SearchForm/SearchForm";
+import { ResultList } from "../../components/ResultList/ResultList";
 import { API_URL } from "../../constants";
 import type { Movie, Person } from "../../types";
 
@@ -44,6 +45,7 @@ export const Home = () => {
   return (
     <div className={styles.container}>
       <SearchForm onSubmit={handleSubmit} />
+      <ResultList searching={loading} result={results} />
     </div>
   );
 };
