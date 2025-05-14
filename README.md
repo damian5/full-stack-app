@@ -93,7 +93,7 @@ root/
 
 ## Start the project
 
-> Make sure you have Docker and Docker Compose installed.
+> Make sure you have Docker installed.
 
 ### 1. Clone the repository:
 
@@ -104,8 +104,16 @@ cd lawnstarterChallenge
 
 ### 2. Start services
 
+If its the first time you run the project, you will have to build it with the `--build` tag
+
 ```bash
-docker-compose up --build
+docker compose up --build
+```
+
+Subsequent runs will be faster and can be done running
+
+```bash
+docker compose up
 ```
 
 > ⚠️ **Warning:** If you experience issues during Docker build, run `npm install` manually in `frontend/` and `backend/`, I could not figure out why there are some problems with node_modules and docker, VSCode won't show the node_modules and will show errors in the dependencies if npm i is not ran, duplicating the node_modules installation will make IntelliSense to not trhow errors.
