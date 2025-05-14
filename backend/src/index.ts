@@ -1,4 +1,6 @@
 import express from "express";
+import { hydrate } from "./db/hydrate";
+import cors from "cors";
 
 import "./db/init";
 
@@ -9,6 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 try {
+  await hydrate();
+
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
