@@ -147,6 +147,7 @@ npm run test
 
 - Add E2E testing
 - Add more unit tests
+- Document API in Swagger or upload Postman collection
 - Look for a solution to get IntelliSense without duplicating the node_modules installation outside the Docker container
 
 Created with ❤️ by Damian Lingua.
