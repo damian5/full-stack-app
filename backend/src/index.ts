@@ -1,4 +1,5 @@
 import express from "express";
+import apiRouter from "./routes/api";
 import { hydrate } from "./db/hydrate";
 import cors from "cors";
 
@@ -12,6 +13,8 @@ app.use(express.json());
 
 try {
   await hydrate();
+
+  app.use("/api", apiRouter);
 
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
