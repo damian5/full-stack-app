@@ -23,9 +23,9 @@ export const ResultList = ({ result, searching }: ResultListProps) => {
   ) => {
     if (!id || !renderType) return;
     if (renderType === "movies") {
-      navigate(`/details/movies/?id=${id}`);
+      navigate(`/details/movies/${id}`);
     } else {
-      navigate(`/details/people/?id=${id}`);
+      navigate(`/details/people/${id}`);
     }
   };
 

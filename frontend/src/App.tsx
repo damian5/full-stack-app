@@ -9,8 +9,8 @@ export const App = () => {
     <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/details/movies" element={<MovieDetails />} />
-        <Route path="/details/people" element={<PersonDetails />} />
+        <Route path="/details/movies/:id" element={<MovieDetails />} />
+        <Route path="/details/people/:id" element={<PersonDetails />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>

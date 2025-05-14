@@ -1,14 +1,14 @@
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { API_URL } from "../../../constants";
-import { useSearchParams, Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import styles from "../Details.module.css";
 import { Button } from "../../../components/Button/Button";
 import type { Person } from "../../../types";
 
 export const PersonDetails = () => {
-  const [searchParams] = useSearchParams();
-  const personId = searchParams.get("id");
+  const params = useParams<{ id: string }>();
+  const personId = params.id;
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
@@ -76,10 +76,7 @@ export const PersonDetails = () => {
                     <Fragment key={film.id}>
                       <Link
                         className={styles.link}
-                        to={{
-                          pathname: "/details/movies",
-                          search: `?id=${film.id}`,
-                        }}
+                        to={`/details/movies/${film.id}`}
                       >
                         {film.title}
                       </Link>

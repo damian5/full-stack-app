@@ -1,6 +1,6 @@
 import { Fragment, useCallback, useEffect, useState } from "react";
 import { API_URL } from "../../../constants";
-import { useSearchParams, Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import styles from "../Details.module.css";
 import { Button } from "../../../components/Button/Button";
@@ -9,8 +9,8 @@ import type { Movie } from "../../../types";
 // To follow AHA pattern si better to keep MovieDetails & PersonDetails separately even if the layout is the same
 // The component could get too complex checking for different keys and adding conditional fetch logic
 export const MovieDetails = () => {
-  const [searchParams] = useSearchParams();
-  const filmId = searchParams.get("id");
+  const params = useParams<{ id: string }>();
+  const filmId = params.id;
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
@@ -62,10 +62,7 @@ export const MovieDetails = () => {
                     <Fragment key={person.id}>
                       <Link
                         className={styles.link}
-                        to={{
-                          pathname: "/details/people",
-                          search: `?id=${person.id}`,
-                        }}
+                        to={`/details/people/${person.id}`}
                       >
                         {person.name}
                       </Link>
