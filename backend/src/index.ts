@@ -1,6 +1,7 @@
 import express from "express";
 import apiRouter from "./routes/api";
 import { hydrate } from "./db/hydrate";
+import { setupCron } from "./jobs/computeStats";
 import cors from "cors";
 
 import "./db/init";
@@ -15,6 +16,8 @@ try {
   await hydrate();
 
   app.use("/api", apiRouter);
+
+  setupCron();
 
   app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
