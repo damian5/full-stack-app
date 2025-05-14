@@ -1,0 +1,25 @@
+.button {
+  min-height: 34px;
+  border-radius: 20px;
+  border: solid 1px;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: bold;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.button[data-color="active"] {
+  background: var(--green-teal);
+  border-color: var(--green-teal);
+}
+
+.button[data-color="disabled"] {
+  background: var(--pinkish-grey);
+  border-color: var(--pinkish-grey);
+  cursor: unset;
+}
+
+.button[data-color="active"]:hover {
+  background: var(--green-teal-dark);
+  border-color: var(--green-teal-dark);
+}
