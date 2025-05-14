@@ -1,0 +1,16 @@
+version: "3"
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: ./backend
+    container_name: backend
+    ports:
+      - "3001:3001"
+    environment:
+      - SQLITE_DB_PATH=./database
+      - PORT=3001
+    volumes:
+      - ./backend/database:/database
+      - ./backend:/backend
+      - /backend/node_modules
