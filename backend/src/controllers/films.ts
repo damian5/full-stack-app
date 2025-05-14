@@ -16,7 +16,10 @@ export const getFilms = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const getFilmById = async (req: Request, res: Response): Promise<void> => {
+export const getFilmById = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   const filmId = Number(req.params.id);
 
   if (isNaN(filmId)) {
@@ -32,6 +35,7 @@ export const getFilmById = async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
+    // TODO: Maybe we can just send id + name here instead of sending all the person data since the FE won't use those values
     const people = await db.all(
       `
       SELECT p.id, p.name, p.gender
@@ -44,7 +48,7 @@ export const getFilmById = async (req: Request, res: Response): Promise<void> =>
 
     res.json({
       ...film,
-      people
+      people,
     });
   } catch (err) {
     res.status(500).json({ error: err.message });

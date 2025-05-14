@@ -16,7 +16,10 @@ export const getPeople = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const getPersonById = async (req: Request, res: Response): Promise<void> => {
+export const getPersonById = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
   const personId = Number(req.params.id);
 
   if (isNaN(personId)) {
@@ -25,16 +28,16 @@ export const getPersonById = async (req: Request, res: Response): Promise<void> 
   }
 
   try {
-    const person = await db.get(
-      "SELECT * FROM people WHERE id = ?",
-      [personId]
-    );
+    const person = await db.get("SELECT * FROM people WHERE id = ?", [
+      personId,
+    ]);
 
     if (!person) {
       res.status(404).json({ error: "Person not found" });
       return;
     }
 
+    // TODO: Maybe we can just send id + title here instead of sending the opening_crawl and the created_at since the FE won't use those values
     const films = await db.all(
       `
       SELECT f.id, f.title, f.opening_crawl
