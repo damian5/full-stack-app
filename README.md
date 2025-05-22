@@ -1,4 +1,4 @@
-# Lawnstart coding challenge
+# Full Stack app
 
 A full-stack application to search for Star Wars movies and characters using [SWAPI API](https://swapi.tech/), view result lists, and explore detailed pages for each item.
 
